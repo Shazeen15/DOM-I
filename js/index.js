@@ -38,10 +38,16 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
+//nav section
+let header = document.querySelector('header');
+header.style.backgroundColor = '#50FB58'
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 let nav = document.querySelector('nav');
+
 nav.children[0].textContent = siteContent["nav"]["nav-item-1"];
 nav.children[1].textContent = siteContent["nav"]["nav-item-2"];
 nav.children[2].textContent = siteContent["nav"]["nav-item-3"];
@@ -49,6 +55,22 @@ nav.children[3].textContent = siteContent["nav"]["nav-item-4"];
 nav.children[4].textContent = siteContent["nav"]["nav-item-5"];
 nav.children[5].textContent = siteContent["nav"]["nav-item-6"];
 
+let links = nav.querySelector('a');
+let copyLink = links.cloneNode(true);
+copyLink.innerHTML = 'Learn More';
+nav.appendChild(copyLink);
+
+let copyLink1 = links.cloneNode(true);
+copyLink1.innerHTML = 'Testimonial';
+nav.prepend(copyLink1);
+
+nav.style.marginLeft = '2%';
+logo.style.marginRight = '2%';
+
+
+
+
+//cta section
 let cta = document.querySelector('.cta');
 let div = cta.querySelector('.cta-text');
 div.querySelector('h1').textContent = siteContent['cta']['h1'];
